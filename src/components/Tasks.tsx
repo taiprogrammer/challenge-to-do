@@ -1,7 +1,16 @@
 import { Task } from "./Task";
 import styles from "./Tasks.module.css";
 
-export function Tasks() {
+export interface TaskProps {
+  id: number;
+  taskCompleted: boolean;
+  title: string;
+}
+interface TasksProps {
+  tasks: Array<TaskProps>;
+}
+
+export function Tasks({ tasks }: TasksProps) {
   return (
     <section className={styles.container}>
       <header>
@@ -14,7 +23,9 @@ export function Tasks() {
           <span>2 de 5</span>
         </div>
       </header>
-      <Task />
+      {tasks.map(({ id, taskCompleted, title }) => {
+        return <Task id={id} taskCompleted={taskCompleted} title={title} />;
+      })}
     </section>
   );
 }
