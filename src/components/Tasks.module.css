@@ -1,0 +1,36 @@
+.container {
+  margin-top: 4rem;
+  margin-left: 22rem;
+  margin-right: 22rem;
+}
+
+.container header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.range-tasks {
+  gap: 0.5rem;
+  display: flex;
+  font-size: 0.875rem;
+}
+
+.range-tasks span {
+  font-weight: 700;
+  font-size: 0.75rem;
+  border-radius: 6.25rem;
+  color: var(--gray-200);
+  padding: 0.125rem 0.5rem;
+  background: var(--gray-400);
+}
+
+.created-tasks {
+  font-weight: 700;
+  color: var(--blue);
+}
+
+.finished-tasks {
+  font-weight: 700;
+  color: var(--purple);
+}
