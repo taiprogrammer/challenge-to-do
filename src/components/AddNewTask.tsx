@@ -20,6 +20,8 @@ export function AddNewTask({ addNewTask }: AddNewTaskProps) {
     };
 
     addNewTask(task);
+
+    setTaskText("");
   }
 
   return (
