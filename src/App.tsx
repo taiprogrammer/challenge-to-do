@@ -14,17 +14,15 @@ export function App() {
   }
 
   function handleCompleteTask(id: number) {
-    tasks.map((task) => {
+    const newTasks = tasks.map((task) => {
       if (task.id === id) {
-        setTasks([
-          {
-            id: task.id,
-            taskCompleted: !task.taskCompleted,
-            title: task.title,
-          },
-        ]);
+        return { ...task, taskCompleted: !task.taskCompleted };
+      } else {
+        return task;
       }
     });
+
+    setTasks(newTasks);
   }
 
   function handleDeleteTask(id: number) {
