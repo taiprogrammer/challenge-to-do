@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Empty } from "./Empty";
 import { Task } from "./Task";
 import styles from "./Tasks.module.css";
 
@@ -32,18 +33,22 @@ export function Tasks({ tasks, completeTask, deleteTask }: TasksProps) {
           </span>
         </div>
       </header>
-      {tasks.map(({ id, taskCompleted, title }) => {
-        return (
-          <Task
-            key={id}
-            id={id}
-            taskCompleted={taskCompleted}
-            title={title}
-            completeTask={() => completeTask(id)}
-            deleteTask={() => deleteTask(id)}
-          />
-        );
-      })}
+      {tasks.length > 0 ? (
+        tasks.map(({ id, taskCompleted, title }) => {
+          return (
+            <Task
+              key={id}
+              id={id}
+              taskCompleted={taskCompleted}
+              title={title}
+              completeTask={() => completeTask(id)}
+              deleteTask={() => deleteTask(id)}
+            />
+          );
+        })
+      ) : (
+        <Empty />
+      )}
     </section>
   );
 }

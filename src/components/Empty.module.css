@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  
+    margin-top: 1.5rem;
+  }
+
+  p {
+    color: var(--gray-300);
+    line-height: 1.5;
+  }
+  
+  .bold-text {
+    margin-top: 1rem;
+    font-weight: bold;
+  }

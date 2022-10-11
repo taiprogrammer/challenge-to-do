@@ -39,13 +39,13 @@ export function App() {
         <img src={logo} alt="Logo" />
       </header>
       <AddNewTask addNewTask={handleCreateNewTask} />
-      {tasks.length > 0 ? (
+      {
         <Tasks
           tasks={tasks}
           completeTask={handleCompleteTask}
           deleteTask={handleDeleteTask}
         />
-      ) : null}
+      }
     </main>
   );
 }
